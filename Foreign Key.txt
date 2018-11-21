@@ -1,0 +1,40 @@
+
+USING INNER JOIN :
+====================>
+
+
+
+you have to use inner join which returns records when there is a common field matches in both tables.. for ex in your case
+
+select * from table1 
+  inner join table2 on table1.user_id=table2.user_id
+will return all the records in both the table by matching the common fields
+
+
+Example :
+===========>
+
+
+Select * from Products
+INNER JOIN Wishlist ON Products.Product_ID=Wishlist.Product_ID;
+WHERE Wishlist.User_ID='blackhat786';
+
+
+
+Select Product_Name,Product_Price,Product_Qty,Product_Description from Products
+INNER JOIN Wishlist ON Products.Product_ID=Wishlist.Product_ID;
+WHERE Wishlist.User_ID='blackhat786';
+
+
+
+
+
+USING CROSS JOIN :
+=====================>
+
+
+
+Select Product_Name,Product_Price,Product_Qty,Product_Description from Products,Wishlist
+WHERE Wishlist.Product_ID=Products.Product_ID
+AND Wishlist.User_ID='udiyadav';
+
